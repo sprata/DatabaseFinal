@@ -87,7 +87,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <form action="response.jsp">
+                        <form action="response_3.jsp">
                             <strong>Select a club</strong>
                             <select name="club_id">
                                 <c:forEach var="row" items="${clubName.rowsByIndex}">
