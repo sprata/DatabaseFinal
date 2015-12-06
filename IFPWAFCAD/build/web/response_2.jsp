@@ -6,23 +6,13 @@
     Author     : Sarah
 --%>
 
-<sql:query var="clubMembers1" dataSource="jdbc/IFPWAFCAD">
-    SELECT * 
-    FROM club, member, person
-    WHERE member.person_id = person.person_id
-    AND club.club_name = ? <sql:param value="${param.club_name}"/>
-</sql:query>
-    
-
-<c:set var="clubDetails" value="${clubMembers1.rows[0]}"/>
-
 <sql:query var="clubMembers" dataSource="jdbc/IFPWAFCAD">
-    SELECT club.club_name, person.category
-    FROM club, member, person
-    WHERE member.club_id = club.club_id
-    AND person.person_id = member.person_id
-    AND person.first_name = "<%= request.getParameter("first_name") %>"
-    AND person.last_name = "<%= request.getParameter("last_name") %>"
+    SELECT c.club_name
+    FROM club c, member m, person p
+    WHERE m.club_id = c.club_id
+    AND p.person_id = m.person_id
+    AND p.first_name = "<%= request.getParameter("first_name") %>"
+    AND p.last_name = "<%= request.getParameter("last_name") %>"
 </sql:query>
     
 <c:set var="clubName" value="${clubMembers.rows[1]}"/>
@@ -40,23 +30,19 @@
             <thead>
                 <tr>
                     <th colspan="2">
+                        <h3 style="">
                         <%= request.getParameter("first_name") %>
                         <%= request.getParameter("last_name") %>
+                        </h3>
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Description: </strong></td>
-                    <td><span style="font-size:smaller; font-style:italic;">"${clubMembers.category}"</span></td>
-                </tr>
-                <tr>
                     <table border="1">
                     <!-- column headers -->
                     <tr>
-                        <c:forEach var="columnName" items="${clubMembers.columnNames}">
-                            <th>Club Name</th>
-                            </c:forEach>
+                        <th>Clubs <%= request.getParameter("first_name") %> is in:</th>         
                     </tr>
                     <!-- column data -->
                     <c:forEach var="row" items="${clubMembers.rowsByIndex}">
