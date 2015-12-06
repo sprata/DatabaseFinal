@@ -8,14 +8,13 @@
 
 <sql:query var="events" dataSource="jdbc/IFPWAFCAD">
     SELECT club_name, oc_name, loc_name, date_time
-    FROM occasion o, club c, location l, hoster h
-    WHERE o.host_id = h.club_id
-    AND h.club_id = c.club_id
-    AND o.loc_id = l.loc_id
-    AND c.club_id = <%= request.getParameter("club_id")%>
-    AND date_time > curdate()
-    GROUP BY o.oc_id
-    ORDER BY date_time
+    FROM occasion o
+    JOIN hoster h on o.oc_id = h.oc_id
+    JOIN club c on h.club_id=c.club_id
+    JOIN location l on o.loc_id=l.loc_id
+    WHERE c.club_id = <%= request.getParameter("club_id")%>
+    AND o.date_time > now()
+    ORDER BY date_time asc;
 </sql:query>  
     
 <c:set var="clubName" value="${events.rows[0]}"/>
