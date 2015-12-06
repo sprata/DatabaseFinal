@@ -18,7 +18,7 @@
         <title>Members</title>
     </head>
     <BODY>
-        <H1>Filling a Table</H1>
+        <H1>Registration for GSBA</H1>
         
         <form action="response_3b.jsp">
             <strong>First Name: </strong>

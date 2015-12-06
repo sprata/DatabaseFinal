@@ -23,5 +23,9 @@
             VALUES (? <sql:param value="${param.last_name}"/>, ? <sql:param value="${param.first_name}"/>, ? <sql:param value="${param.category}"/>, ? <sql:param value="${param.gender}"/>, ? <sql:param value="${param.age}"/>)
         </sql:update> 
         <H1>You have been registered</H1>
+        <form action="index.jsp">
+            <strong>Return to home</strong>
+            <input type="submit" value="submit" name="submit" />
+        </form>
     </BODY>
 </html>

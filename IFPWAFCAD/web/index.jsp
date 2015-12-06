@@ -30,7 +30,12 @@
         <table border="0">
             <thead>
                 <tr>
-                    <th>Please choose your club to see its details.</th>
+                    <td>
+                        <form action="response_3.jsp">
+                            <strong>In order to be added to a club, you must register with GSBA</strong>
+                            <input type="submit" value="register" name="register" />
+                        </form>
+                    </td>
                 </tr>
             </thead>
             <tbody>
@@ -84,20 +89,6 @@
                 </tr>
                 <tr>
                     <td>Select a club to register for</td>
-                </tr>
-                <tr>
-                    <td>
-                        <form action="response_3.jsp">
-                            <strong>Select a club</strong>
-                            <select name="club_id">
-                                <c:forEach var="row" items="${clubName.rowsByIndex}">
-                                            <option value="${row[0]}">${row[1]}</option>
-                                </c:forEach>
-                                <option></option>
-                            </select>
-                            <input type="submit" value="submit" name="submit" />
-                        </form>
-                    </td>
                 </tr>
             </tbody>
         </table>
