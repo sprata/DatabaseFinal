@@ -14,8 +14,7 @@
     AND p.first_name = "<%= request.getParameter("first_name") %>"
     AND p.last_name = "<%= request.getParameter("last_name") %>"
 </sql:query>
-    
-<c:set var="clubName" value="${clubMembers.rows[1]}"/>
+
     
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
