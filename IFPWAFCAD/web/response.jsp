@@ -67,7 +67,7 @@
                         <td><c:out value="${row[3]}"/></td>
                     </tr>
                 </c:forEach>
-        </tbody>
+            </tbody>
 
     </table>
 </body>
