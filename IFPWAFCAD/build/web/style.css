@@ -55,3 +55,28 @@ a:link:hover {
    font-weight: normal;
    text-decoration: underline;
 }
+
+#main_table {
+    border-width: 5px;
+    border-color: #A4BBD0;
+    border-style: double;
+    width: 800px;
+    margin-left: 45px;
+}
+
+.entry_row {
+    padding-left: 20px;
+}
+
+.homeButton {
+    margin-bottom: 10px;
+}
+
+.homeButton button {
+    background-color: white;
+    border-color: #9CC2E4;
+}
+
+.homeButton button:hover {
+    background-color: #C5E7E0;
+}

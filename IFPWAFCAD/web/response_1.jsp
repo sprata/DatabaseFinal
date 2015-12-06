@@ -28,6 +28,11 @@
         <title>Future Events</title>
     </head>
     <body>
+        <div class="homeButton">
+            <form action="index.jsp">
+                <button type="submit" value="Home">Home</button>
+            </form>
+        </div>
         <table border="0">
             <thead>
                 <tr>

@@ -28,7 +28,7 @@
 
 
 <sql:query var="clubMembers" dataSource="jdbc/IFPWAFCAD">
-    SELECT * 
+    SELECT *
     FROM club, member, person
     WHERE member.club_id = club.club_id
     AND person.person_id = member.person_id
@@ -46,6 +46,11 @@
         <title>Members</title>
     </head>
     <body>
+        <div class="homeButton">
+            <form action="index.jsp">
+                <button type="submit" value="Home">Home</button>
+            </form>
+        </div>
         <table border="0">
             <thead>
                 <tr>
@@ -55,9 +60,9 @@
             <tbody>
                 <!-- column headers -->
                 <tr>
-                        <th><c:out value="Name:"/></th>
-                        <th><c:out value="Category:"/></th>
-                        <th><c:out value="Role:"/></th>
+                    <th><c:out value="Name:"/></th>
+                    <th><c:out value="Category:"/></th>
+                    <th><c:out value="Role:"/></th>
                 </tr>
                 <!-- column data -->
                 <c:forEach var="row" items="${clubMembers3.rowsByIndex}">

@@ -27,13 +27,13 @@
         <h2>Welcome to <strong>GSBA Club Registration</strong>, the easiest way to keep track of your club!
         </h2>
 
-        <table border="0">
+        <table id="main_table">
             <thead>
                 <tr>
                     <td>
                         <form action="response_3.jsp">
-                            <strong>In order to be added to a club, you must register with GSBA</strong>
-                            <input type="submit" value="register" name="register" />
+                            <strong>To join a club, you must first register with GSBA: </strong>
+                            <input type="submit" value="Register" name="register" />
                         </form>
                     </td>
                 </tr>
@@ -44,7 +44,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <form action="response.jsp">
+                        <form action="response.jsp" class="entry_row">
                             <strong>Select a club: </strong>
                             <select name="club_id">
                                 <c:forEach var="row" items="${clubName.rowsByIndex}">
@@ -52,7 +52,7 @@
                                 </c:forEach>
                                 <option></option>
                             </select>
-                            <input type="submit" value="submit" name="submit" />
+                            <input type="submit" value="Submit" name="submit" />
                         </form>
                     </td>
                 </tr>
@@ -61,34 +61,31 @@
                 </tr>
                 <tr>
                     <td>
-                        <form action="response_1.jsp">
-                            <strong>Select a club</strong>
+                        <form action="response_1.jsp" class="entry_row">
+                            <strong>Select a club: </strong>
                             <select name="club_id">
                                 <c:forEach var="row" items="${clubName.rowsByIndex}">
                                             <option value="${row[0]}">${row[1]}</option>
                                 </c:forEach>
                                 <option></option>
                             </select>
-                            <input type="submit" value="submit" name="submit" />
+                            <input type="submit" value="Submit" name="submit" />
                         </form>
                     </td>
                 </tr>
                 <tr>
-                    <td>Enter the name of a person to view their memberships</td>
+                    <td>Enter the name of a person to view their club memberships</td>
                 </tr>
                 <tr>
                     <td>
-                        <form action="response_2.jsp">
+                        <form action="response_2.jsp" class="entry_row">
                             <strong>First Name: </strong>
                             <input type="text" name="first_name" />
                             <strong>Last Name: </strong>
                             <input type="text" name="last_name" />
-                            <input type="submit" value="submit" name="submit" />
+                            <input type="submit" value="Submit" name="submit" />
                         </form>
                     </td>
-                </tr>
-                <tr>
-                    <td>Select a club to register for</td>
                 </tr>
             </tbody>
         </table>
