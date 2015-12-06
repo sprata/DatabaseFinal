@@ -24,7 +24,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h2>Welcome to <strong>GUSB Club Registration</strong>, the easiest way to keep track of your club!
+        <h2>Welcome to <strong>GSBA Club Registration</strong>, the easiest way to keep track of your club!
         </h2>
 
         <table border="0">
