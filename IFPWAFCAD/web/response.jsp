@@ -49,7 +49,7 @@
         <table border="0">
             <thead>
                 <tr>
-                    <th colspan="3" id="th2">${clubName.club_name}</th>
+                    <th colspan="3" class="th2">${clubName.club_name}</th>
                 </tr>
             </thead>
             <tbody>

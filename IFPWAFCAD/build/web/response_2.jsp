@@ -7,7 +7,7 @@
 --%>
 
 <sql:query var="clubMembers" dataSource="jdbc/IFPWAFCAD">
-    SELECT c.club_name
+    SELECT c.club_name, m.role
     FROM club c, member m, person p
     WHERE m.club_id = c.club_id
     AND p.person_id = m.person_id
@@ -28,27 +28,26 @@
         <table border="0">
             <thead>
                 <tr>
-                    <th colspan="2">
-                        <h3 style="">
+                    <th colspan="2" class="th2">
+                        Clubs
                         <%= request.getParameter("first_name") %>
                         <%= request.getParameter("last_name") %>
-                        </h3>
+                        is in:
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <table border="1">
                     <!-- column headers -->
                     <tr>
-                        <th>Clubs <%= request.getParameter("first_name") %> is in:</th>         
+                        <th>Club Name</th>
+                        <th>Role</th>
                     </tr>
                     <!-- column data -->
                     <c:forEach var="row" items="${clubMembers.rowsByIndex}">
                         <tr>
-                            <c:forEach var="column" items="${row}">
-                                <td><c:out value="${column}"/></td>
-                            </c:forEach>
+                            <td><c:out value="${row[0]}"/></td>
+                            <td><c:out value="${row[1]}"/></td>
                         </tr>
                     </c:forEach>
                     </table>
