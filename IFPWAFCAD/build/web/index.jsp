@@ -50,7 +50,6 @@
                                 <c:forEach var="row" items="${clubName.rowsByIndex}">
                                     <option value="${row[0]}">${row[1]}</option>
                                 </c:forEach>
-                                <option></option>
                             </select>
                             <input type="submit" value="Submit" name="submit" />
                         </form>
@@ -67,7 +66,6 @@
                                 <c:forEach var="row" items="${clubName.rowsByIndex}">
                                             <option value="${row[0]}">${row[1]}</option>
                                 </c:forEach>
-                                <option></option>
                             </select>
                             <input type="submit" value="Submit" name="submit" />
                         </form>
@@ -83,6 +81,22 @@
                             <input type="text" name="first_name" />
                             <strong>Last Name: </strong>
                             <input type="text" name="last_name" />
+                            <input type="submit" value="Submit" name="submit" />
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Select the club you would like to register for</td>
+                </tr>
+                <tr>
+                    <td>
+                        <form action="response_4.jsp" class="entry_row">
+                            <strong>Select a club: </strong>
+                            <select name="club_id">
+                                <c:forEach var="row" items="${clubName.rowsByIndex}">
+                                            <option value="${row[0]}">${row[1]}</option>
+                                </c:forEach>
+                            </select>
                             <input type="submit" value="Submit" name="submit" />
                         </form>
                     </td>

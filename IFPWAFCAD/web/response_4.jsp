@@ -5,8 +5,9 @@
     Created on : Dec 2, 2015, 11:50:38 AM
     Author     : Sarah
 --%>
-
-
+<sql:query var="result" dataSource="jdbc/IFPWAFCAD">
+    SELECT club_name FROM club WHERE club.club_id = ? <sql:param value="${param.club_id}"/>
+</sql:query>
 
 <%@ page import="java.sql.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -23,30 +24,24 @@
                 <button type="submit" value="Home">Home</button>
             </form>
         </div>
-        <h1>Registration for GSBA</h1>
+        <h1>Registration for ${result.rows[0].club_name}</h1>
         
-        <form action="response_3b.jsp">
+        <form action="response_4b.jsp">
             <strong>First Name: </strong>
+            <input style="display:none" name="club_id" value="${param.club_id}"></input>
             <input type="text" name="first_name" />
             <strong>Last Name: </strong>
             <input type="text" name="last_name" />
             </br>
             </br>
-            <strong>Category: </strong>
-            <select name="category">
-                <option value="guest">-select-</option> 
-                <option value="student">student</option> 
-                <option value="faculty">faculty</option> 
-                <option value="guest">guest</option> 
-            </select>
-            </br>
-            </br>
-            <strong style="margin-right: 12px">Gender: </strong>
-            <select name="gender"> 
-                <option value="-1">-select-</option> 
-                <option value="0">female</option> 
-                <option value="1">male</option> 
-                <option value="2">other</option> 
+            <strong>Role: </strong>
+            <select name="role">
+                <option value="voting">-voting-</option> 
+                <option value="non-voting">non-voting</option> 
+                <option value="president">president</option> 
+                <option value="vice president">vice president</option> 
+                <option value="secretary">secretary</option>
+                <option value="social-secretary">social-secretary</option>
             </select>
             </br>
             </br>
